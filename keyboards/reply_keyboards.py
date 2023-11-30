@@ -3,7 +3,8 @@ from aiogram.types import ReplyKeyboardMarkup, \
                           
 async def get_news_keyboard_on() -> ReplyKeyboardMarkup:
     keyboard = [
-        [KeyboardButton(text='✅ Включить рассылку')]
+        [KeyboardButton(text='✅ Включить рассылку')],
+        [KeyboardButton(text='Настройки')]
     ]
     reply_keyboard = ReplyKeyboardMarkup(
         keyboard=keyboard,
@@ -14,7 +15,8 @@ async def get_news_keyboard_on() -> ReplyKeyboardMarkup:
 
 async def get_news_keyboard_off() -> ReplyKeyboardMarkup:
     keyboard = [
-        [KeyboardButton(text='❌ Отключить рассылку')]
+        [KeyboardButton(text='❌ Отключить рассылку')],
+        [KeyboardButton(text='Настройки')]
     ]
     reply_keyboard = ReplyKeyboardMarkup(
         keyboard=keyboard,

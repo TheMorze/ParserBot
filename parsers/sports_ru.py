@@ -1,5 +1,6 @@
 from aiogram import Bot
 import asyncio
+from loguru import logger
 
 import requests
 from bs4 import BeautifulSoup

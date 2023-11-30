@@ -1,7 +1,6 @@
 from aiogram import Router, F
-from aiogram.types import Message, CallbackQuery
-from aiogram.filters import Command, CommandStart, \
-                            StateFilter
+from aiogram.types import Message
+from aiogram.filters import Command, CommandStart
 
 from lexicon.lexicon import LEXICON
 from keyboards.reply_keyboards import get_news_keyboard_on, \
@@ -51,12 +50,3 @@ async def news_already_off(message: Message):
     
     await message.answer(text=LEXICON['already_off'])
     
-@router.message(IsNewsletter())
-async def process_others_on(message: Message):
-    
-    await message.answer(text=LEXICON['not_understand_on'])
-
-@router.message(~IsNewsletter())
-async def process_others_off(message: Message):
-    
-    await message.answer(text=LEXICON['not_understand_off'])

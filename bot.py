@@ -7,7 +7,8 @@ from aiogram.fsm.storage.redis import RedisStorage, Redis
 from config_data.config import Config, load_config
 from config_data.menu import set_main_menu
 
-from handlers import user_handlers
+from handlers import user_handlers, settings_handlers, \
+                     other_handlers
 from database.service import Database
 
 from parsers.sports_ru import check_sports_ru
@@ -34,6 +35,9 @@ async def main() -> None:
     dp = Dispatcher(redis=redis)
     
     dp.include_router(user_handlers.router)
+    dp.include_router(settings_handlers.router)
+    
+    dp.include_router(other_handlers.router)
     
     asyncio.create_task(check_sports_ru(bot))
     # Задаем боту меню с командами
