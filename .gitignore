@@ -1,4 +1,4 @@
 .env
 __pycache__/
 amvera.yml
-db.sqlite3
+data/db.sqlite3
